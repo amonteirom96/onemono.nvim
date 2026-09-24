@@ -24,7 +24,7 @@ M.base = {
     blue = "#3f67a9",
   },
   dark = {
-    bg = "#2c2e34", -- edge dark: onedark gray
+    bg = "#232833", -- essential dark: slate leaning to blue
     fg = "#c5cdd9", -- edge dark: cool off-white
     red = "#f5898e",
     orange = "#e0a06e",

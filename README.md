@@ -50,8 +50,8 @@ backgrounds and hues, and cuts the syntax down to what earns a color:
   | LSP completion kinds (blink.cmp, dropbar) | one color per kind, the same everywhere; functions blue and strings green, like the code |
   | File icons (mini.icons) | icon colors, with red folded into orange and purple into azure |
   | Search, `TODO` / `FIXME` / `NOTE` markers | attention colors |
-- **Easy on the eyes.** The dark variant is edge's Onedark gray (`#2c2e34`)
-  with its cool off-white text; the light variant is a cool, blue-leaning paper (`#eef2f8`)
+- **Easy on the eyes.** The dark variant is a blue-leaning slate (`#232833`)
+  with edge's cool off-white text; the light variant is a cool, blue-leaning paper (`#eef2f8`)
   with edge's soft graphite. Every accent passes **WCAG AA (≥ 4.5:1)** on both the
   background and the selection color (`scripts/contrast.lua`).
 
@@ -240,7 +240,7 @@ on the cool paper background (from essential.nvim).
 
 | Key | Light | Dark | Used for |
 | --- | --- | --- | --- |
-| `bg` | `#eef2f8` | `#2c2e34` | background |
+| `bg` | `#eef2f8` | `#232833` | background |
 | `fg` | `#4b505b` | `#c5cdd9` | **code** |
 | `green` | `#4d7128` | `#a0c980` | **strings**, git add, ok, snippets |
 | `blue` | `#3f67a9` | `#6cb6eb` | **functions**, git change, info, `accent` |

@@ -11,7 +11,7 @@
 - [x] Cor apenas onde carrega significado: git, diagnósticos, kinds do LSP, ícones, busca, TODO/FIXME.
 
 ## Paleta
-- [x] Dark: `#2c2e34` / `#c5cdd9` (edge default). Superfícies derivadas batem com bg1..bg4 do edge.
+- [x] Dark: `#232833` (fundo do essential) / `#c5cdd9` (edge default). Superfícies derivadas com leve tom azul, como bg1..bg4 do edge.
 - [x] Light: `#eef2f8` (fundo do essential) / `#4b505b` (edge light). Acentos com os tons do edge light, escurecidos o mínimo para passar WCAG AA.
 - [x] Acentos: green, blue, red, orange, yellow, cyan, azure.
 - [x] `c.code.{string,func}` configurável via `on_colors`.
