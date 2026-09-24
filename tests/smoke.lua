@@ -21,7 +21,8 @@ for _, name in ipairs({ "onemono-light", "onemono-dark", "onemono" }) do
     Type = c.yellow, ["@type"] = c.yellow, ["@type.builtin"] = c.yellow, ["@constructor"] = c.yellow,
     Number = c.orange, Boolean = c.orange, ["@constant"] = c.orange, ["@constant.builtin"] = c.orange, ["@number"] = c.orange,
   }
-  for _, g in ipairs({ "Keyword", "@variable", "@keyword", "@property", "@module", "@operator", "Comment" }) do
+  want.Comment, want["@comment"] = c.comment, c.comment
+  for _, g in ipairs({ "Keyword", "@variable", "@keyword", "@property", "@module", "@operator" }) do
     want[g] = c.fg
   end
   for g, color in pairs(want) do
@@ -69,6 +70,7 @@ for _, v in ipairs({ "light", "dark" }) do
     check(not red or allowed[n] or meaning, ("%s: %s uses red outside errors/deletions"):format(v, n))
   end
   check(c.purple == nil, v .. ": no purple in the palette")
+  check(c.comment ~= c.fg and require("onemono.util").contrast(c.comment, c.bg) >= 4.5, v .. ": comment dimmer than fg, still AA")
 end
 
 -- mono = true: pure monochrome

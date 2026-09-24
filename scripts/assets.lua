@@ -81,7 +81,7 @@ local CODE = {
   { { "local", "kw" }, { " util = " }, { "require", "fn" }, { "(" }, { '"onemono.util"', "str" }, { ")" } },
   {},
   { { "-- ", "comment" }, { "TODO", "todo" }, { " cache blended results", "comment" } },
-  { { "---@param fg ", "comment" }, { "Color", "type" } },
+  { { "---@param fg ", "comment" }, { "Color", "type" }, { " color on top", "comment" } },
   { { "function", "kw" }, { " M." }, { "blend", "fn" }, { "(fg, bg, alpha)" } },
   { { "  " }, { "local", "kw" }, { " r = fg.r * alpha + bg.r * (" }, { "1", "const" }, { " - alpha)" } },
   { { "  " }, { "local", "kw" }, { " hex = util." }, { "format", "fn" }, { "(" }, { '"#%02x"', "str" }, { ", r, " }, { "true", "const" }, { ")" } },
@@ -144,7 +144,7 @@ local function editor(c, ox, oy, w, h, label)
       if style == "kw" then
         parts[#parts + 1] = fmt('<tspan font-weight="700">%s</tspan>', esc(text))
       elseif style == "comment" then
-        parts[#parts + 1] = fmt('<tspan font-style="italic">%s</tspan>', esc(text))
+        parts[#parts + 1] = fmt('<tspan fill="%s" font-style="italic">%s</tspan>', c.comment, esc(text))
       elseif style == "str" then
         parts[#parts + 1] = fmt('<tspan fill="%s">%s</tspan>', c.code.string, esc(text))
       elseif style == "fn" then

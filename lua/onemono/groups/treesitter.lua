@@ -37,7 +37,7 @@ return function(c, o)
     ["@label"] = with(s.keywords),
 
     ["@string"] = with(s.strings, str),
-    ["@string.documentation"] = vim.tbl_extend("force", { fg = o.muted_comments and c.muted or fg }, s.comments),
+    ["@string.documentation"] = vim.tbl_extend("force", { fg = o.muted_comments and c.muted or c.comment }, s.comments),
     ["@string.regexp"] = with(s.strings, str),
     ["@string.escape"] = { fg = str, bold = true },
     ["@string.special.url"] = { fg = str, underline = true },

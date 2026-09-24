@@ -8,7 +8,7 @@
 return function(c, o)
   local s = o.styles
   local fg = c.fg
-  local comment = vim.tbl_extend("force", { fg = o.muted_comments and c.muted or fg }, s.comments)
+  local comment = vim.tbl_extend("force", { fg = o.muted_comments and c.muted or c.comment }, s.comments)
 
   ---@param style onemono.Style
   ---@param color? string

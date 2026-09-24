@@ -37,8 +37,9 @@ backgrounds and hues, and cuts the syntax down to what earns a color:
   | types, classes, constructors | **yellow** |
   | constants, numbers, booleans, `null` | **orange** |
 
-  Everything else is told apart by shape. Comments are italic and keywords
-  are bold by default, and you can change both. Set `mono = true` for pure
+  Everything else is told apart by shape. Keywords are bold; comments are
+  italic and a step dimmer than the code (still WCAG AA), and you can change
+  both. Set `mono = true` for pure
   monochrome.
 - **Red means error.** It appears on diagnostics, error messages,
   `FIXME`/`BUG` markers, git deletions and the Visual mode block of the
@@ -143,7 +144,7 @@ require("onemono").setup({
   transparent = false,       -- no background on Normal, floats and the sign column
   terminal_colors = true,    -- set g:terminal_color_0..15
   dim_inactive = false,      -- slightly different background on unfocused windows
-  muted_comments = false,    -- comments in the muted UI tone instead of the code color
+  muted_comments = false,    -- comments even fainter, in the muted UI tone
   mono = false,              -- all code in the foreground color (pure monochrome)
   float = {
     solid = false,           -- filled floats with an invisible border
@@ -266,7 +267,8 @@ on the cool paper background (from essential.nvim).
 
 UI tones are derived from `fg` and `bg`, with a slight blue lean like edge's
 `bg1`..`bg4`: `surface1`, `surface2`, `surface3`, `border`, `muted` and
-`bg_dim`. `muted` appears only in UI chrome, such as line numbers and
+`bg_dim`. `comment` is `fg` faded toward the background, kept above 4.5:1.
+`muted` appears only in UI chrome, such as line numbers and
 whitespace. It never appears in code. `c.code.{string,func,type,constant}` are
 the only hues used in code.
 

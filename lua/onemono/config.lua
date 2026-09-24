@@ -8,7 +8,7 @@ local M = {}
 ---@field transparent? boolean                  no background on Normal/floats/sign column
 ---@field terminal_colors? boolean              set g:terminal_color_0..15
 ---@field dim_inactive? boolean                 slightly different bg on unfocused windows
----@field muted_comments? boolean               comments in the muted UI tone instead of fg
+---@field muted_comments? boolean               comments even fainter, in the muted UI tone
 ---@field mono? boolean                         all code in fg (pure monochrome)
 ---@field float? { solid?: boolean }            solid = filled floats without visible border
 ---@field styles? table<"comments"|"keywords"|"functions"|"variables"|"strings"|"types"|"constants"|"operators", onemono.Style>

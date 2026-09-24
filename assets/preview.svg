@@ -13,9 +13,9 @@
 <text x="72" y="107" fill="#4b505b" xml:space="preserve"></text>
 <text x="60" y="133" text-anchor="end" fill="#868a94">3</text>
 <rect x="97" y="120" width="40" height="18" rx="3" fill="#3f67a9"/>
-<text x="72" y="133" fill="#4b505b" xml:space="preserve"><tspan font-style="italic">-- </tspan><tspan fill="#eef2f8" font-weight="700">TODO</tspan><tspan font-style="italic"> cache blended results</tspan></text>
+<text x="72" y="133" fill="#4b505b" xml:space="preserve"><tspan fill="#676c83" font-style="italic">-- </tspan><tspan fill="#eef2f8" font-weight="700">TODO</tspan><tspan fill="#676c83" font-style="italic"> cache blended results</tspan></text>
 <text x="60" y="159" text-anchor="end" fill="#868a94">4</text>
-<text x="72" y="159" fill="#4b505b" xml:space="preserve"><tspan font-style="italic">---@param fg </tspan><tspan fill="#8c5d04">Color</tspan></text>
+<text x="72" y="159" fill="#4b505b" xml:space="preserve"><tspan fill="#676c83" font-style="italic">---@param fg </tspan><tspan fill="#8c5d04">Color</tspan><tspan fill="#676c83" font-style="italic"> color on top</tspan></text>
 <rect x="28" y="170" width="38" height="22" fill="#d6dfed"/>
 <text x="60" y="185" text-anchor="end" fill="#3f67a9" font-weight="700">5</text>
 <text x="72" y="185" fill="#4b505b" xml:space="preserve"><tspan font-weight="700">function</tspan> M.<tspan fill="#3f67a9">blend</tspan>(fg, bg, alpha)</text>
@@ -85,9 +85,9 @@
 <text x="702" y="107" fill="#c5cdd9" xml:space="preserve"></text>
 <text x="690" y="133" text-anchor="end" fill="#747b86">3</text>
 <rect x="727" y="120" width="40" height="18" rx="3" fill="#6cb6eb"/>
-<text x="702" y="133" fill="#c5cdd9" xml:space="preserve"><tspan font-style="italic">-- </tspan><tspan fill="#232833" font-weight="700">TODO</tspan><tspan font-style="italic"> cache blended results</tspan></text>
+<text x="702" y="133" fill="#c5cdd9" xml:space="preserve"><tspan fill="#8f97aa" font-style="italic">-- </tspan><tspan fill="#232833" font-weight="700">TODO</tspan><tspan fill="#8f97aa" font-style="italic"> cache blended results</tspan></text>
 <text x="690" y="159" text-anchor="end" fill="#747b86">4</text>
-<text x="702" y="159" fill="#c5cdd9" xml:space="preserve"><tspan font-style="italic">---@param fg </tspan><tspan fill="#deb974">Color</tspan></text>
+<text x="702" y="159" fill="#c5cdd9" xml:space="preserve"><tspan fill="#8f97aa" font-style="italic">---@param fg </tspan><tspan fill="#deb974">Color</tspan><tspan fill="#8f97aa" font-style="italic"> color on top</tspan></text>
 <rect x="658" y="170" width="38" height="22" fill="#2d3c4d"/>
 <text x="690" y="185" text-anchor="end" fill="#6cb6eb" font-weight="700">5</text>
 <text x="702" y="185" fill="#c5cdd9" xml:space="preserve"><tspan font-weight="700">function</tspan> M.<tspan fill="#6cb6eb">blend</tspan>(fg, bg, alpha)</text>

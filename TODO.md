@@ -4,7 +4,7 @@
 
 ## Filosofia
 - [x] Base: paleta Onedark da variante [edge](https://github.com/sainnhe/edge) (fundos, fg e acentos).
-- [x] Código: uma única cor de texto, exceto **strings (verde)**, **funções (azul)**, **tipos (amarelo)** e **constantes/literais (laranja)**, as mesmas cores dos kinds do LSP. Keywords e comentários por estilo (negrito/itálico).
+- [x] Código: uma única cor de texto, exceto **strings (verde)**, **funções (azul)**, **tipos (amarelo)** e **constantes/literais (laranja)**, as mesmas cores dos kinds do LSP. Keywords em negrito; comentários em itálico e num tom mais apagado que o código (`c.comment`, ainda WCAG AA).
 - [x] Opção `mono = true` para monocromático puro (todo o código no fg).
 - [x] **Vermelho = erro.** Só em diagnósticos, mensagens de erro, `FIXME`/`BUG`, SpellBad e git delete. Teste garante.
 - [x] **Sem roxo, sem rosa.** Fora da paleta; ANSI magenta e ícones roxos do mini.icons viram azure.

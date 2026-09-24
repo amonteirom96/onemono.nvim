@@ -58,6 +58,7 @@ M.base = {
 ---@field surface3 string    stronger selection / match paren
 ---@field border string
 ---@field muted string       UI chrome only (line numbers, whitespace) — never code
+---@field comment string     comments: fg faded toward bg, still WCAG AA
 ---@field accent string      single UI focal color (matches, prompts)
 ---@field search string      background for search matches
 ---@field code { string: string, func: string, type: string, constant: string }  the only hues used in code
@@ -85,6 +86,9 @@ function M.get(variant, opts)
   c.surface3 = blend(tint, c.bg, is_light and 0.14 or 0.13)
   c.border = blend(tint, c.bg, is_light and 0.24 or 0.22)
   c.muted = blend(c.fg, c.bg, is_light and 0.64 or 0.50)
+  -- Comments step back from the code without dropping below AA (4.5:1): fg
+  -- with the UI's blue lean, faded toward bg. Italic does the rest.
+  c.comment = blend(blend(tint, c.fg, 0.35), c.bg, is_light and 0.84 or 0.7)
   c.bg_dim = is_light and blend(c.fg, c.bg, 0.03) or util.darken(c.bg, 0.12)
   c.bg_float = c.bg
   c.accent = c.blue
