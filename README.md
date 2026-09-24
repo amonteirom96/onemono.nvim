@@ -9,8 +9,8 @@
 
 <p align="center">
   <img alt="Neovim" src="https://img.shields.io/badge/Neovim-0.10%2B-4b505b?style=flat-square&logo=neovim&logoColor=fafafa">
-  <img alt="Load time" src="https://img.shields.io/badge/load-~4ms-2963a8?style=flat-square">
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-456f1d?style=flat-square">
+  <img alt="Load time" src="https://img.shields.io/badge/load-~4ms-3f67a9?style=flat-square">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-4d7128?style=flat-square">
 </p>
 
 ---
@@ -51,8 +51,8 @@ backgrounds and hues, and cuts the syntax down to what earns a color:
   | File icons (mini.icons) | icon colors, with red folded into orange and purple into azure |
   | Search, `TODO` / `FIXME` / `NOTE` markers | attention colors |
 - **Easy on the eyes.** The dark variant is edge's Onedark gray (`#2c2e34`)
-  with its cool off-white text; the light variant is edge's near-white paper
-  with soft graphite. Every accent passes **WCAG AA (≥ 4.5:1)** on both the
+  with its cool off-white text; the light variant is a cool, blue-leaning paper (`#eef2f8`)
+  with edge's soft graphite. Every accent passes **WCAG AA (≥ 4.5:1)** on both the
   background and the selection color (`scripts/contrast.lua`).
 
 ## Features
@@ -235,19 +235,20 @@ require("onemono").setup({
 ## Palette
 
 Taken from the Onedark family ([edge](https://github.com/sainnhe/edge)).
-The light accents are darkened a little to pass WCAG AA on near-white.
+The light accents keep edge light's hues, darkened just enough to pass WCAG AA
+on the cool paper background (from essential.nvim).
 
 | Key | Light | Dark | Used for |
 | --- | --- | --- | --- |
-| `bg` | `#fafafa` | `#2c2e34` | background |
+| `bg` | `#eef2f8` | `#2c2e34` | background |
 | `fg` | `#4b505b` | `#c5cdd9` | **code** |
-| `green` | `#456f1d` | `#a0c980` | **strings**, git add, ok, snippets |
-| `blue` | `#2963a8` | `#6cb6eb` | **functions**, git change, info, `accent` |
+| `green` | `#4d7128` | `#a0c980` | **strings**, git add, ok, snippets |
+| `blue` | `#3f67a9` | `#6cb6eb` | **functions**, git change, info, `accent` |
 | `red` | `#b33c3c` | `#f5898e` | **errors only**, git delete |
-| `orange` | `#984c16` | `#e0a06e` | kinds (enum, constant), substitute |
-| `yellow` | `#835c00` | `#deb974` | warnings, kinds (class, struct) |
-| `cyan` | `#226f68` | `#5dbbc1` | hints, kinds (field, property) |
-| `azure` | `#4a5ea8` | `#96a8ee` | kinds (module, keyword), ANSI magenta |
+| `orange` | `#9b5522` | `#e0a06e` | kinds (enum, constant), substitute |
+| `yellow` | `#8c5d04` | `#deb974` | warnings, kinds (class, struct) |
+| `cyan` | `#2f716b` | `#5dbbc1` | hints, kinds (field, property) |
+| `azure` | `#545dc0` | `#96a8ee` | kinds (module, keyword), ANSI magenta |
 
 UI tones are derived from `fg` and `bg`, with a slight blue lean like edge's
 `bg1`..`bg4`: `surface1`, `surface2`, `surface3`, `border`, `muted` and

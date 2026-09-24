@@ -5,21 +5,21 @@
 <clipPath id="card"><rect width="1280" height="420" rx="24"/></clipPath>
 </defs>
 <g clip-path="url(#card)">
-<rect width="1280" height="420" fill="#fafafa"/>
+<rect width="1280" height="420" fill="#eef2f8"/>
 <rect width="1280" height="420" fill="#2c2e34" clip-path="url(#right)"/>
 <g clip-path="url(#left)">
 <text x="640" y="200" text-anchor="middle" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="112" font-weight="700" letter-spacing="-3" fill="#4b505b">onemono</text>
 <text x="640" y="258" text-anchor="middle" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="24" fill="#4b505b" letter-spacing="0.5">onedark, monochrome · green strings, blue functions, red only for errors</text>
-<text x="640" y="372" text-anchor="middle" font-family="'JetBrains Mono','SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="17" fill="#8a8d94" letter-spacing="4">NEOVIM · GHOSTTY · KITTY · LAZYGIT</text>
+<text x="640" y="372" text-anchor="middle" font-family="'JetBrains Mono','SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="17" fill="#868a94" letter-spacing="4">NEOVIM · GHOSTTY · KITTY · LAZYGIT</text>
 </g>
 <g clip-path="url(#right)">
 <text x="640" y="200" text-anchor="middle" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="112" font-weight="700" letter-spacing="-3" fill="#c5cdd9">onemono</text>
 <text x="640" y="258" text-anchor="middle" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="24" fill="#c5cdd9" letter-spacing="0.5">onedark, monochrome · green strings, blue functions, red only for errors</text>
 <text x="640" y="372" text-anchor="middle" font-family="'JetBrains Mono','SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="17" fill="#797e87" letter-spacing="4">NEOVIM · GHOSTTY · KITTY · LAZYGIT</text>
 </g>
-<circle cx="526" cy="310" r="9" fill="#456f1d"/>
-<circle cx="564" cy="310" r="9" fill="#2963a8"/>
-<circle cx="602" cy="310" r="9" fill="#226f68"/>
+<circle cx="526" cy="310" r="9" fill="#4d7128"/>
+<circle cx="564" cy="310" r="9" fill="#3f67a9"/>
+<circle cx="602" cy="310" r="9" fill="#2f716b"/>
 <circle cx="640" cy="310" r="9" fill="#96a8ee"/>
 <circle cx="678" cy="310" r="9" fill="#deb974"/>
 <circle cx="716" cy="310" r="9" fill="#e0a06e"/>

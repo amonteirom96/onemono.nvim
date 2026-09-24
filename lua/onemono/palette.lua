@@ -11,15 +11,17 @@ local M = {}
 ---@type table<"light"|"dark", onemono.BasePalette>
 M.base = {
   light = {
-    bg = "#fafafa", -- edge light: near-white paper
+    bg = "#eef2f8", -- essential light: paper leaning to a soft, cool blue
     fg = "#4b505b", -- edge light: soft graphite
+    -- Accents keep edge light's hue and saturation, darkened just enough to
+    -- pass WCAG AA on bg and surface2.
     red = "#b33c3c",
-    orange = "#984c16",
-    yellow = "#835c00",
-    green = "#456f1d",
-    cyan = "#226f68",
-    azure = "#4a5ea8",
-    blue = "#2963a8",
+    orange = "#9b5522",
+    yellow = "#8c5d04",
+    green = "#4d7128",
+    cyan = "#2f716b",
+    azure = "#545dc0",
+    blue = "#3f67a9",
   },
   dark = {
     bg = "#2c2e34", -- edge dark: onedark gray

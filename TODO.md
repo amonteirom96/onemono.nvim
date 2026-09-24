@@ -12,7 +12,7 @@
 
 ## Paleta
 - [x] Dark: `#2c2e34` / `#c5cdd9` (edge default). Superfícies derivadas batem com bg1..bg4 do edge.
-- [x] Light: `#fafafa` / `#4b505b` (edge light). Acentos escurecidos para passar WCAG AA.
+- [x] Light: `#eef2f8` (fundo do essential) / `#4b505b` (edge light). Acentos com os tons do edge light, escurecidos o mínimo para passar WCAG AA.
 - [x] Acentos: green, blue, red, orange, yellow, cyan, azure.
 - [x] `c.code.{string,func}` configurável via `on_colors`.
 - [x] Script de validação de contraste (`scripts/contrast.lua`).
