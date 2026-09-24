@@ -1,0 +1,2 @@
+# onemono.nvim
+Onedark monocrome
