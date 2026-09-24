@@ -76,15 +76,15 @@ end
 -------------------------------------------------------------------------------
 -- Preview: an editor mock-up rendered in both variants
 -------------------------------------------------------------------------------
--- token = { text, style } where style: nil | "kw" | "comment" | "todo" | "str" | "fn"
+-- token = { text, style } where style: nil | "kw" | "comment" | "todo" | "str" | "fn" | "type" | "const"
 local CODE = {
   { { "local", "kw" }, { " util = " }, { "require", "fn" }, { "(" }, { '"onemono.util"', "str" }, { ")" } },
   {},
   { { "-- ", "comment" }, { "TODO", "todo" }, { " cache blended results", "comment" } },
-  { { "--- Mix two colors, alpha in [0, 1].", "comment" } },
+  { { "---@param fg ", "comment" }, { "Color", "type" } },
   { { "function", "kw" }, { " M." }, { "blend", "fn" }, { "(fg, bg, alpha)" } },
-  { { "  " }, { "local", "kw" }, { " r = fg.r * alpha + bg.r * (1 - alpha)" } },
-  { { "  " }, { "local", "kw" }, { " hex = util." }, { "format", "fn" }, { "(" }, { '"#%02x"', "str" }, { ", r)" } },
+  { { "  " }, { "local", "kw" }, { " r = fg.r * alpha + bg.r * (" }, { "1", "const" }, { " - alpha)" } },
+  { { "  " }, { "local", "kw" }, { " hex = util." }, { "format", "fn" }, { "(" }, { '"#%02x"', "str" }, { ", r, " }, { "true", "const" }, { ")" } },
   { { "  " }, { "return", "kw" }, { " M.h" } },
   { { "end", "kw" } },
   {},
@@ -149,6 +149,10 @@ local function editor(c, ox, oy, w, h, label)
         parts[#parts + 1] = fmt('<tspan fill="%s">%s</tspan>', c.code.string, esc(text))
       elseif style == "fn" then
         parts[#parts + 1] = fmt('<tspan fill="%s">%s</tspan>', c.code.func, esc(text))
+      elseif style == "type" then
+        parts[#parts + 1] = fmt('<tspan fill="%s">%s</tspan>', c.code.type, esc(text))
+      elseif style == "const" then
+        parts[#parts + 1] = fmt('<tspan fill="%s">%s</tspan>', c.code.constant, esc(text))
       elseif style == "todo" then
         parts[#parts + 1] = fmt('<tspan fill="%s" font-weight="700">%s</tspan>', c.bg, esc(text))
       else

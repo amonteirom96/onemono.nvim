@@ -4,8 +4,9 @@ local M = {}
 
 --- Base palettes, taken from the Onedark family (sainnhe/edge). Everything
 --- else is derived from these nine colors.
---- `fg` is the color used for code. Only strings (green) and functions (blue)
---- get a hue, the two Onedark colors that read as calm, not as alarm.
+--- `fg` is the color used for code. Four token kinds get a hue: strings (green),
+--- functions (blue), types (yellow) and constants/literals (orange), the same
+--- colors their LSP kinds use. Keywords, variables and operators stay `fg`.
 --- There is no purple or pink, and `red` means *error* and nothing else
 --- (diagnostics, error messages, FIXME, git deletions).
 ---@type table<"light"|"dark", onemono.BasePalette>
@@ -59,7 +60,7 @@ M.base = {
 ---@field muted string       UI chrome only (line numbers, whitespace) — never code
 ---@field accent string      single UI focal color (matches, prompts)
 ---@field search string      background for search matches
----@field code { string: string, func: string }  the only hues used in code
+---@field code { string: string, func: string, type: string, constant: string }  the only hues used in code
 ---@field git { add: string, change: string, delete: string }
 ---@field diag { error: string, warn: string, info: string, hint: string, ok: string }
 
@@ -92,7 +93,12 @@ function M.get(variant, opts)
   c.search = blend(c.accent, c.bg, is_light and 0.25 or 0.32)
 
   local mono = opts.mono
-  c.code = { string = mono and c.fg or c.green, func = mono and c.fg or c.blue }
+  c.code = {
+    string = mono and c.fg or c.green,
+    func = mono and c.fg or c.blue,
+    type = mono and c.fg or c.yellow,
+    constant = mono and c.fg or c.orange,
+  }
   c.git = { add = c.green, change = c.blue, delete = c.red }
   c.diag = { error = c.red, warn = c.yellow, info = c.blue, hint = c.cyan, ok = c.green }
 

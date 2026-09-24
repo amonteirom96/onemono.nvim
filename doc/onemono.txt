@@ -1,4 +1,4 @@
-*onemono.txt*    Onedark, monochrome. Green strings, blue functions, red errors.
+*onemono.txt*    Onedark, quieted down. Four hues for code, red for errors.
 
 ==============================================================================
 CONTENTS                                                   *onemono-contents*
@@ -13,9 +13,10 @@ CONTENTS                                                   *onemono-contents*
 ==============================================================================
 1. INTRODUCTION                                        *onemono-introduction*
 
-onemono is a monochrome take on the Onedark palette (sainnhe/edge). Code
-uses a single foreground color, except strings (green) and functions (blue).
-Structure comes from style (italic comments, bold keywords), not from hue.
+onemono is a quiet take on the Onedark palette (sainnhe/edge). Code uses a
+single foreground color, except strings (green), functions (blue), types
+(yellow) and constants/literals (orange). Keywords and comments are told
+apart by style (bold keywords, italic comments), not by hue.
 Red is reserved for errors and git deletions; there is no purple or pink.
 Color is otherwise used only where it carries meaning:
 
@@ -54,7 +55,7 @@ Defaults:
       terminal_colors = true,
       dim_inactive = false,
       muted_comments = false,
-      mono = false,            -- strings/functions in fg too
+      mono = false,            -- all code in fg
       float = { solid = false },
       styles = {
         comments = { italic = true },
@@ -77,12 +78,13 @@ on_colors(colors, variant)
     Change the palette before highlights are built. Keys: `bg`, `fg`, `red`,
     `orange`, `yellow`, `green`, `cyan`, `azure`, `blue`, `accent`,
     `surface1`, `surface2`, `surface3`, `border`, `muted`, `bg_dim`,
-    `bg_float`, `code.{string,func}`, `git.{add,change,delete}`,
+    `bg_float`, `code.{string,func,type,constant}`, `git.{add,change,delete}`,
     `diag.{error,warn,info,hint,ok}`.
 
                                                                *onemono-mono*
 mono
-    When true, strings and functions use `fg` like the rest of the code.
+    When true, strings, functions, types and constants use `fg` like the
+    rest of the code.
 
                                                       *onemono-on_highlights*
 on_highlights(hl, colors, variant)

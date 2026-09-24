@@ -13,10 +13,15 @@ for _, name in ipairs({ "onemono-light", "onemono-dark", "onemono" }) do
   check(vim.g.colors_name == name, name .. ": colors_name=" .. tostring(vim.g.colors_name))
   local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
   check(normal.fg and normal.bg, name .. ": Normal has fg/bg")
-  -- code is monochrome, except strings (green) and functions (blue)
+  -- code is fg, except strings (green), functions (blue), types (yellow) and constants (orange)
   local c = ex.colors(vim.o.background)
-  local want = { String = c.green, ["@string"] = c.green, Function = c.blue, ["@function.call"] = c.blue, ["@function.method"] = c.blue }
-  for _, g in ipairs({ "Keyword", "@variable", "Type", "Number", "@keyword", "@property", "@constant", "@type", "Comment" }) do
+  local want = {
+    String = c.green, ["@string"] = c.green,
+    Function = c.blue, ["@function.call"] = c.blue, ["@function.method"] = c.blue,
+    Type = c.yellow, ["@type"] = c.yellow, ["@type.builtin"] = c.yellow, ["@constructor"] = c.yellow,
+    Number = c.orange, Boolean = c.orange, ["@constant"] = c.orange, ["@constant.builtin"] = c.orange, ["@number"] = c.orange,
+  }
+  for _, g in ipairs({ "Keyword", "@variable", "@keyword", "@property", "@module", "@operator", "Comment" }) do
     want[g] = c.fg
   end
   for g, color in pairs(want) do
@@ -72,6 +77,8 @@ vim.cmd.colorscheme("onemono-dark")
 local nfg = vim.api.nvim_get_hl(0, { name = "Normal" }).fg
 check(vim.api.nvim_get_hl(0, { name = "String", link = false }).fg == nfg, "mono: String in fg")
 check(vim.api.nvim_get_hl(0, { name = "@function.call", link = false }).fg == nfg, "mono: @function.call in fg")
+check(vim.api.nvim_get_hl(0, { name = "@type", link = false }).fg == nfg, "mono: @type in fg")
+check(vim.api.nvim_get_hl(0, { name = "@constant.builtin", link = false }).fg == nfg, "mono: @constant.builtin in fg")
 ex.setup({})
 
 -- highlights never produce invalid specs

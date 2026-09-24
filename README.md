@@ -4,7 +4,7 @@
 
 <p align="center">
   <b>Onedark, quieted down.</b><br>
-  A monochrome take on the Onedark palette: green strings, blue functions, and red only for errors and deletions.
+  A quiet take on the Onedark palette: four hues for code, and red only for errors and deletions.
 </p>
 
 <p align="center">
@@ -27,12 +27,15 @@ constants orange. Red code that is not an error is noise, and after a while
 the rainbow stops telling you anything. **onemono** keeps the Onedark
 backgrounds and hues, and cuts the syntax down to what earns a color:
 
-- **Code is (almost) one color.** Keywords, variables, types, constants and
-  operators all use the same foreground. Only two things get a hue:
+- **Code is mostly one color.** Keywords, variables, properties, modules and
+  operators all use the same foreground. Only four things get a hue, the same
+  colors their LSP kinds use in the completion menu:
   | Token | Color |
   | --- | --- |
   | strings | **green** |
   | functions and methods | **blue** |
+  | types, classes, constructors | **yellow** |
+  | constants, numbers, booleans, `null` | **orange** |
 
   Everything else is told apart by shape. Comments are italic and keywords
   are bold by default, and you can change both. Set `mono = true` for pure
@@ -48,7 +51,7 @@ backgrounds and hues, and cuts the syntax down to what earns a color:
   | --- | --- |
   | Git (gitsigns, diff, lazygit) | add **green** · change **blue** · delete **red** |
   | Diagnostics | error red · warn yellow · info blue · hint cyan · ok green |
-  | LSP completion kinds (blink.cmp, dropbar) | one color per kind, the same everywhere; functions blue and strings green, like the code |
+  | LSP completion kinds (blink.cmp, dropbar) | one color per kind, the same everywhere and the same as in the code |
   | File icons (mini.icons) | icon colors, with red folded into orange and purple into azure |
   | Search, `TODO` / `FIXME` / `NOTE` markers | attention colors |
   | Statusline modes (`StMode*`) | normal **blue** · insert **green** · visual **red** · replace **orange** · command **azure** · other **cyan** |
@@ -141,7 +144,7 @@ require("onemono").setup({
   terminal_colors = true,    -- set g:terminal_color_0..15
   dim_inactive = false,      -- slightly different background on unfocused windows
   muted_comments = false,    -- comments in the muted UI tone instead of the code color
-  mono = false,              -- strings and functions in the code color too (pure monochrome)
+  mono = false,              -- all code in the foreground color (pure monochrome)
   float = {
     solid = false,           -- filled floats with an invisible border
   },
@@ -184,7 +187,7 @@ require("onemono").setup({
 
 ### Examples
 
-**Pure monochrome.** No green or blue in code, and no bold or italic anywhere:
+**Pure monochrome.** No hues in code, and no bold or italic anywhere:
 
 ```lua
 require("onemono").setup({
@@ -193,14 +196,15 @@ require("onemono").setup({
 })
 ```
 
-**Change which tokens get a color.** `c.code` holds the only two hues used in
-code:
+**Change which tokens get a color.** `c.code` holds the only four hues used in
+code (`string`, `func`, `type`, `constant`):
 
 ```lua
 require("onemono").setup({
   on_colors = function(c)
     c.code.string = c.fg      -- strings back to the code color
     c.code.func = c.cyan      -- functions in cyan
+    c.code.type = c.fg        -- types back to the code color
   end,
 })
 ```
@@ -255,16 +259,16 @@ on the cool paper background (from essential.nvim).
 | `green` | `#4d7128` | `#a0c980` | **strings**, git add, ok, snippets |
 | `blue` | `#3f67a9` | `#6cb6eb` | **functions**, git change, info, `accent` |
 | `red` | `#b33c3c` | `#f5898e` | **errors only**, git delete |
-| `orange` | `#9b5522` | `#e0a06e` | kinds (enum, constant), substitute |
-| `yellow` | `#8c5d04` | `#deb974` | warnings, kinds (class, struct) |
+| `orange` | `#9b5522` | `#e0a06e` | **constants and literals**, kinds (enum, constant), substitute |
+| `yellow` | `#8c5d04` | `#deb974` | **types**, warnings, kinds (class, struct) |
 | `cyan` | `#2f716b` | `#5dbbc1` | hints, kinds (field, property) |
 | `azure` | `#545dc0` | `#96a8ee` | kinds (module, keyword), ANSI magenta |
 
 UI tones are derived from `fg` and `bg`, with a slight blue lean like edge's
 `bg1`..`bg4`: `surface1`, `surface2`, `surface3`, `border`, `muted` and
 `bg_dim`. `muted` appears only in UI chrome, such as line numbers and
-whitespace. It never appears in code. `c.code.string` and `c.code.func` are
-the two hues used in code.
+whitespace. It never appears in code. `c.code.{string,func,type,constant}` are
+the only hues used in code.
 
 Use the palette in your own config:
 

@@ -8,7 +8,7 @@ return function(c, o)
   local s = o.styles
   local fg = c.fg
 
-  local str, func = c.code.string, c.code.func
+  local str, func, typ, const = c.code.string, c.code.func, c.code.type, c.code.constant
 
   ---@param style onemono.Style
   ---@param color? string
@@ -26,8 +26,12 @@ return function(c, o)
     ["@variable.parameter"] = with(s.variables),
     ["@variable.member"] = with(s.variables),
 
-    ["@constant"] = with(s.constants),
-    ["@constant.builtin"] = with(s.constants),
+    ["@constant"] = with(s.constants, const),
+    ["@constant.builtin"] = with(s.constants, const),
+    ["@constant.macro"] = with(s.constants, const),
+    ["@number"] = with(s.constants, const),
+    ["@number.float"] = with(s.constants, const),
+    ["@boolean"] = with(s.constants, const),
     ["@module"] = { fg = fg },
     ["@module.builtin"] = { fg = fg },
     ["@label"] = with(s.keywords),
@@ -40,8 +44,9 @@ return function(c, o)
     ["@character"] = with(s.strings, str),
     ["@character.special"] = { fg = str, bold = true },
 
-    ["@type"] = with(s.types),
-    ["@type.builtin"] = with(s.types),
+    ["@type"] = with(s.types, typ),
+    ["@type.builtin"] = with(s.types, typ),
+    ["@type.definition"] = with(s.types, typ),
     ["@attribute"] = { fg = fg },
     ["@property"] = with(s.variables),
 
@@ -51,7 +56,7 @@ return function(c, o)
     ["@function.macro"] = with(s.functions, func),
     ["@function.method"] = with(s.functions, func),
     ["@function.method.call"] = with(s.functions, func),
-    ["@constructor"] = with(s.types),
+    ["@constructor"] = with(s.types, typ),
     ["@operator"] = with(s.operators),
 
     ["@keyword"] = with(s.keywords),

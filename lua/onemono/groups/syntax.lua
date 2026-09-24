@@ -1,6 +1,7 @@
---- Code is monochrome: every token uses `fg`, except strings (green) and
---- functions (blue). Structure comes from style (italic/bold, configurable via
---- `styles`), never from extra hues. Red appears only on errors.
+--- Code is mostly `fg`. Only strings (green), functions (blue), types (yellow)
+--- and constants/literals (orange) get a hue; keywords, variables and operators
+--- are told apart by style (italic/bold, configurable via `styles`). Red appears
+--- only on errors.
 
 ---@param c onemono.Colors
 ---@param o onemono.Config
@@ -19,8 +20,8 @@ return function(c, o)
   local func = with(s.functions, c.code.func)
   local variable = with(s.variables)
   local str = with(s.strings, c.code.string)
-  local typ = with(s.types)
-  local const = with(s.constants)
+  local typ = with(s.types, c.code.type)
+  local const = with(s.constants, c.code.constant)
   local op = with(s.operators)
 
   return {
