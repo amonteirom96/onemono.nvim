@@ -96,7 +96,6 @@ backgrounds and hues, and cuts the syntax down to what earns a color:
   "amonteirom96/onemono.nvim",
   lazy = false,
   priority = 1000,
-  build = ":OnemonoCompile",
   opts = {},
   config = function(_, opts)
     require("onemono").setup(opts)
@@ -104,6 +103,14 @@ backgrounds and hues, and cuts the syntax down to what earns a color:
   end,
 }
 ```
+
+No `build` step is needed: the cache is keyed by the plugin version and your
+config, so an update recompiles on its own.
+
+> [!NOTE]
+> If lazy.nvim fails with `E492: Not an editor command: EssentialCompile`, your
+> spec still has the `build` line from essential.nvim. Remove it (or change it
+> to `":OnemonoCompile"`) and restart Neovim.
 
 Native `vim.pack` (Neovim 0.12):
 
@@ -287,7 +294,7 @@ the palette has no purple.
 
 | Command | Description |
 | --- | --- |
-| `:OnemonoCompile` | Rebuild the bytecode cache. Run it after updating the plugin, or after changing values captured inside an `on_*` closure. |
+| `:OnemonoCompile` | Rebuild the bytecode cache. Updates recompile on their own; run it after changing values captured inside an `on_*` closure. |
 | `:OnemonoClearCache` | Delete the cache (`stdpath("cache")/onemono`). |
 | `:OnemonoExtras [dir]` | Generate the Ghostty, Kitty and Lazygit themes. |
 
