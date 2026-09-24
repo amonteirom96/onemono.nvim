@@ -65,7 +65,7 @@ Defaults:
       integrations = {
         blink = true, dropbar = true, gitsigns = true, grug_far = true,
         lazy = true, mason = true, mini = true,
-        semantic_tokens = true, treesitter = true,
+        semantic_tokens = true, statusline = true, treesitter = true,
       },
       cache = true,
       on_colors = nil,         -- fun(colors, variant)

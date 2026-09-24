@@ -43,6 +43,7 @@ M.defaults = {
     mason = true,
     mini = true, -- icons, pick, extra, files, tabline
     semantic_tokens = true,
+    statusline = true, -- St* groups for a custom statusline
     treesitter = true,
   },
   cache = true,

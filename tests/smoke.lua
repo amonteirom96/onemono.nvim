@@ -56,7 +56,7 @@ for _, v in ipairs({ "light", "dark" }) do
   local allowed = {
     Error = true, ErrorMsg = true, StderrMsg = true, NvimInternalError = true, SpellBad = true,
     healthError = true, RedrawDebugRecompose = true, MasonError = true, LazyTaskError = true,
-    ["@comment.error"] = true, ["@lsp.type.unresolvedReference"] = true,
+    ["@comment.error"] = true, StModeVisual = true, StModeVisualSep = true, ["@lsp.type.unresolvedReference"] = true,
   }
   for n, spec in pairs(ex.highlights(v)) do
     local red = spec.fg == c.red or spec.bg == c.red or spec.sp == c.red

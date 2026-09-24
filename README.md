@@ -38,7 +38,8 @@ backgrounds and hues, and cuts the syntax down to what earns a color:
   are bold by default, and you can change both. Set `mono = true` for pure
   monochrome.
 - **Red means error.** It appears on diagnostics, error messages,
-  `FIXME`/`BUG` markers and git deletions, and nowhere in code.
+  `FIXME`/`BUG` markers, git deletions and the Visual mode block of the
+  statusline, and nowhere in code.
   A test checks this.
 - **No purple, no pink.** They are not in the palette. Where a tool needs a
   "magenta" (ANSI color 5, mini.icons purple icons) it gets a calm azure.
@@ -50,6 +51,7 @@ backgrounds and hues, and cuts the syntax down to what earns a color:
   | LSP completion kinds (blink.cmp, dropbar) | one color per kind, the same everywhere; functions blue and strings green, like the code |
   | File icons (mini.icons) | icon colors, with red folded into orange and purple into azure |
   | Search, `TODO` / `FIXME` / `NOTE` markers | attention colors |
+  | Statusline modes (`StMode*`) | normal **blue** · insert **green** · visual **red** · replace **orange** · command **azure** · other **cyan** |
 - **Easy on the eyes.** The dark variant is a blue-leaning slate (`#232833`)
   with edge's cool off-white text; the light variant is a cool, blue-leaning paper (`#eef2f8`)
   with edge's soft graphite. Every accent passes **WCAG AA (≥ 4.5:1)** on both the
@@ -162,6 +164,7 @@ require("onemono").setup({
     mason = true,
     mini = true,             -- icons, pick, extra, files, tabline
     semantic_tokens = true,
+    statusline = true,       -- St* groups for a custom statusline
     treesitter = true,
   },
   cache = true,              -- compile to bytecode (turn off only while hacking on the theme)
