@@ -1,0 +1,133 @@
+*onemono.txt*    Onedark, monochrome. Green strings, blue functions, red errors.
+
+==============================================================================
+CONTENTS                                                   *onemono-contents*
+
+  1. Introduction ............................ |onemono-introduction|
+  2. Usage ................................... |onemono-usage|
+  3. Configuration ........................... |onemono-config|
+  4. Commands ................................ |onemono-commands|
+  5. API ..................................... |onemono-api|
+  6. Extras .................................. |onemono-extras|
+
+==============================================================================
+1. INTRODUCTION                                        *onemono-introduction*
+
+onemono is a monochrome take on the Onedark palette (sainnhe/edge). Code
+uses a single foreground color, except strings (green) and functions (blue).
+Structure comes from style (italic comments, bold keywords), not from hue.
+Red is reserved for errors and git deletions; there is no purple or pink.
+Color is otherwise used only where it carries meaning:
+
+  - git: add = green, change = blue, delete = red
+  - diagnostics: error, warn, info, hint, ok
+  - LSP completion and symbol kinds (blink.cmp, dropbar)
+  - file icons (mini.icons)
+  - search and TODO/FIXME/NOTE markers
+
+Highlights are compiled to LuaJIT bytecode and cached, so a cached load takes
+a few milliseconds.
+
+==============================================================================
+2. USAGE                                                      *onemono-usage*
+
+>lua
+    require("onemono").setup({})   -- optional
+    vim.cmd.colorscheme("onemono")
+<
+                                  *onemono* *onemono-light* *onemono-dark*
+  onemono         follows 'background' (or the `variant` option)
+  onemono-light   always light
+  onemono-dark    always dark
+
+Neovim detects the terminal background at startup. When you use `onemono`,
+the theme follows the terminal and switches when 'background' changes.
+
+==============================================================================
+3. CONFIGURATION                                             *onemono-config*
+
+Defaults:
+>lua
+    require("onemono").setup({
+      variant = "auto",        -- "auto" | "light" | "dark"
+      transparent = false,
+      terminal_colors = true,
+      dim_inactive = false,
+      muted_comments = false,
+      mono = false,            -- strings/functions in fg too
+      float = { solid = false },
+      styles = {
+        comments = { italic = true },
+        keywords = { bold = true },
+        functions = {}, variables = {}, strings = {},
+        types = {}, constants = {}, operators = {},
+      },
+      integrations = {
+        blink = true, dropbar = true, gitsigns = true, grug_far = true,
+        lazy = true, mason = true, mini = true,
+        semantic_tokens = true, treesitter = true,
+      },
+      cache = true,
+      on_colors = nil,         -- fun(colors, variant)
+      on_highlights = nil,     -- fun(hl, colors, variant)
+    })
+<
+                                                          *onemono-on_colors*
+on_colors(colors, variant)
+    Change the palette before highlights are built. Keys: `bg`, `fg`, `red`,
+    `orange`, `yellow`, `green`, `cyan`, `azure`, `blue`, `accent`,
+    `surface1`, `surface2`, `surface3`, `border`, `muted`, `bg_dim`,
+    `bg_float`, `code.{string,func}`, `git.{add,change,delete}`,
+    `diag.{error,warn,info,hint,ok}`.
+
+                                                               *onemono-mono*
+mono
+    When true, strings and functions use `fg` like the rest of the code.
+
+                                                      *onemono-on_highlights*
+on_highlights(hl, colors, variant)
+    Change or add highlight groups. `hl` maps group names to
+    |nvim_set_hl()| specs, with colors as "#rrggbb" strings.
+
+The compiled cache is keyed by a hash of your options, so changes take effect
+on the next `:colorscheme`. The hash covers function bodies but not captured
+upvalues. If you change such a value, run |:OnemonoCompile|.
+
+==============================================================================
+4. COMMANDS                                                *onemono-commands*
+
+                                                            *:OnemonoCompile*
+:OnemonoCompile       Delete and rebuild the compiled cache, then reload.
+
+                                                         *:OnemonoClearCache*
+:OnemonoClearCache    Delete the compiled cache.
+
+                                                             *:OnemonoExtras*
+:OnemonoExtras [dir]  Write the Ghostty, Kitty and Lazygit themes to [dir]
+                        (default: the plugin's `extras/` directory).
+
+==============================================================================
+5. API                                                          *onemono-api*
+
+require("onemono").setup({opts})         Configure.
+require("onemono").load({name})          Apply a colorscheme by name.
+require("onemono").colors({variant})     Return the full palette.
+require("onemono").highlights({variant}) Return the final highlight table.
+require("onemono").compile()             Same as |:OnemonoCompile|.
+require("onemono").clear_cache()         Same as |:OnemonoClearCache|.
+require("onemono").extras({dir})         Same as |:OnemonoExtras|.
+
+==============================================================================
+6. EXTRAS                                                    *onemono-extras*
+
+extras/ghostty/onemono-{light,dark}
+    Copy to ~/.config/ghostty/themes/ and set:
+    `theme = light:onemono-light,dark:onemono-dark`
+
+extras/kitty/onemono-{light,dark}.conf
+    Copy to ~/.config/kitty/{light,dark}-theme.auto.conf.
+
+extras/lazygit/onemono-{light,dark}.yml
+    Merge into config.yml, or append to LG_CONFIG_FILE.
+
+ vim:tw=78:ts=8:ft=help:norl:

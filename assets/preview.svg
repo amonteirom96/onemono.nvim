@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="500" viewBox="0 0 1280 500">
+<clipPath id="clipLIGHT"><rect x="20" y="20" width="610" height="460" rx="14"/></clipPath>
+<g font-family="'JetBrains Mono','SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="15" clip-path="url(#clipLIGHT)">
+<rect x="20" y="20" width="610" height="460" rx="14" fill="#fafafa" stroke="#d0d3dd"/>
+<rect x="20" y="20" width="610" height="30" rx="14" fill="#fafafa"/>
+<rect x="34" y="22" width="120" height="30" fill="#ecedf0"/>
+<text x="44" y="42" fill="#4b505b" font-weight="700"><tspan fill="#2963a8">●</tspan> blend.lua</text>
+<text x="170" y="42" fill="#8a8d94"><tspan fill="#4a5ea8">●</tspan> init.lua</text>
+<text x="614" y="42" fill="#8a8d94" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="13" text-anchor="end" letter-spacing="2">LIGHT</text>
+<text x="60" y="81" text-anchor="end" fill="#8a8d94">1</text>
+<text x="72" y="81" fill="#4b505b" xml:space="preserve"><tspan font-weight="700">local</tspan> util = <tspan fill="#2963a8">require</tspan>(<tspan fill="#456f1d">"onemono.util"</tspan>)</text>
+<text x="60" y="107" text-anchor="end" fill="#8a8d94">2</text>
+<text x="72" y="107" fill="#4b505b" xml:space="preserve"></text>
+<text x="60" y="133" text-anchor="end" fill="#8a8d94">3</text>
+<rect x="97" y="120" width="40" height="18" rx="3" fill="#2963a8"/>
+<text x="72" y="133" fill="#4b505b" xml:space="preserve"><tspan font-style="italic">-- </tspan><tspan fill="#fafafa" font-weight="700">TODO</tspan><tspan font-style="italic"> cache blended results</tspan></text>
+<text x="60" y="159" text-anchor="end" fill="#8a8d94">4</text>
+<text x="72" y="159" fill="#4b505b" xml:space="preserve"><tspan font-style="italic">--- Mix two colors, alpha in [0, 1].</tspan></text>
+<rect x="28" y="170" width="38" height="22" fill="#dde5ef"/>
+<text x="60" y="185" text-anchor="end" fill="#2963a8" font-weight="700">5</text>
+<text x="72" y="185" fill="#4b505b" xml:space="preserve"><tspan font-weight="700">function</tspan> M.<tspan fill="#2963a8">blend</tspan>(fg, bg, alpha)</text>
+<rect x="28" y="196" width="38" height="22" fill="#e1e7db"/>
+<text x="60" y="211" text-anchor="end" fill="#456f1d" font-weight="700">6</text>
+<text x="72" y="211" fill="#4b505b" xml:space="preserve">  <tspan font-weight="700">local</tspan> r = fg.r * alpha + bg.r * (1 - alpha)</text>
+<rect x="28" y="222" width="38" height="22" fill="#e1e7db"/>
+<text x="60" y="237" text-anchor="end" fill="#456f1d" font-weight="700">7</text>
+<text x="72" y="237" fill="#4b505b" xml:space="preserve">  <tspan font-weight="700">local</tspan> hex = util.<tspan fill="#2963a8">format</tspan>(<tspan fill="#456f1d">"#%02x"</tspan>, r)</text>
+<rect x="21" y="246" width="608" height="26" fill="#f1f2f4"/>
+<text x="60" y="263" text-anchor="end" fill="#4b505b" font-weight="700">8</text>
+<text x="72" y="263" fill="#4b505b" xml:space="preserve">  <tspan font-weight="700">return</tspan> M.h</text>
+<text x="60" y="289" text-anchor="end" fill="#8a8d94">9</text>
+<text x="72" y="289" fill="#4b505b" xml:space="preserve"><tspan font-weight="700">end</tspan></text>
+<rect x="28" y="300" width="38" height="22" fill="#f0dfdf"/>
+<text x="60" y="315" text-anchor="end" fill="#b33c3c" font-weight="700">10</text>
+<text x="72" y="315" fill="#4b505b" xml:space="preserve"></text>
+<text x="60" y="341" text-anchor="end" fill="#8a8d94">11</text>
+<text x="72" y="341" fill="#4b505b" xml:space="preserve"><tspan font-weight="700">return</tspan> M</text>
+<rect x="198" y="249" width="225" height="20" rx="4" fill="#f3e7e7"/>
+<text x="206" y="263" fill="#b33c3c" xml:space="preserve">■ undefined field `h`</text>
+<path d="M153 269 q2 -3 4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0" fill="none" stroke="#b33c3c" stroke-width="1.3"/>
+<rect x="171" y="274" width="250" height="156" rx="8" fill="#fafafa" stroke="#d0d3dd"/>
+<rect x="172" y="280" width="248" height="24" fill="#ecedf0"/>
+<rect x="181" y="284" width="16" height="16" rx="4" fill="#d0dcea"/>
+<text x="189" y="296" fill="#2963a8" font-size="11" font-weight="700" text-anchor="middle">ƒ</text>
+<text x="207" y="297" fill="#4b505b" font-weight="700"><tspan fill="#2963a8" font-weight="700">h</tspan>ex</text>
+<text x="409" y="297" fill="#2963a8" text-anchor="end" font-size="13">Function</text>
+<rect x="181" y="308" width="16" height="16" rx="4" fill="#cfdedd"/>
+<text x="189" y="320" fill="#226f68" font-size="11" font-weight="700" text-anchor="middle">◆</text>
+<text x="207" y="321" fill="#4b505b"><tspan fill="#2963a8" font-weight="700">h</tspan>ighlights</text>
+<text x="409" y="321" fill="#226f68" text-anchor="end" font-size="13">Field</text>
+<rect x="181" y="332" width="16" height="16" rx="4" fill="#d7d8da"/>
+<text x="189" y="344" fill="#4b505b" font-size="11" font-weight="700" text-anchor="middle">x</text>
+<text x="207" y="345" fill="#4b505b"><tspan fill="#2963a8" font-weight="700">h</tspan>ue</text>
+<text x="409" y="345" fill="#4b505b" text-anchor="end" font-size="13">Variable</text>
+<rect x="181" y="356" width="16" height="16" rx="4" fill="#e2dac8"/>
+<text x="189" y="368" fill="#835c00" font-size="11" font-weight="700" text-anchor="middle">C</text>
+<text x="207" y="369" fill="#4b505b"><tspan fill="#2963a8" font-weight="700">h</tspan>sl</text>
+<text x="409" y="369" fill="#835c00" text-anchor="end" font-size="13">Class</text>
+<rect x="181" y="380" width="16" height="16" rx="4" fill="#d7dbea"/>
+<text x="189" y="392" fill="#4a5ea8" font-size="11" font-weight="700" text-anchor="middle">M</text>
+<text x="207" y="393" fill="#4b505b"><tspan fill="#2963a8" font-weight="700">h</tspan>ttp</text>
+<text x="409" y="393" fill="#4a5ea8" text-anchor="end" font-size="13">Module</text>
+<rect x="181" y="404" width="16" height="16" rx="4" fill="#d6dece"/>
+<text x="189" y="416" fill="#456f1d" font-size="11" font-weight="700" text-anchor="middle">S</text>
+<text x="207" y="417" fill="#4b505b"><tspan fill="#2963a8" font-weight="700">h</tspan>ash</text>
+<text x="409" y="417" fill="#456f1d" text-anchor="end" font-size="13">Snippet</text>
+<rect x="21" y="446" width="608" height="34" fill="#ecedf0"/>
+<rect x="21" y="446" width="70" height="34" fill="#2963a8"/>
+<text x="40" y="468" fill="#fafafa" font-weight="700">NOR</text>
+<text x="106" y="468" fill="#2963a8">[onemono]  <tspan fill="#b33c3c">E:1</tspan> <tspan fill="#835c00">W:2</tspan></text>
+<text x="614" y="468" fill="#4b505b" text-anchor="end"><tspan fill="#456f1d"> main</tspan>  <tspan fill="#2963a8">●</tspan> lua  8:14</text>
+</g>
+<rect x="20" y="20" width="610" height="460" rx="14" fill="none" stroke="#d0d3dd"/>
+<clipPath id="clipDARK"><rect x="650" y="20" width="610" height="460" rx="14"/></clipPath>
+<g font-family="'JetBrains Mono','SF Mono','Cascadia Code',Menlo,Consolas,monospace" font-size="15" clip-path="url(#clipDARK)">
+<rect x="650" y="20" width="610" height="460" rx="14" fill="#2c2e34" stroke="#494d5b"/>
+<rect x="650" y="20" width="610" height="30" rx="14" fill="#2c2e34"/>
+<rect x="664" y="22" width="120" height="30" fill="#373a43"/>
+<text x="674" y="42" fill="#c5cdd9" font-weight="700"><tspan fill="#6cb6eb">●</tspan> blend.lua</text>
+<text x="800" y="42" fill="#797e87"><tspan fill="#96a8ee">●</tspan> init.lua</text>
+<text x="1244" y="42" fill="#797e87" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="13" text-anchor="end" letter-spacing="2">DARK</text>
+<text x="690" y="81" text-anchor="end" fill="#797e87">1</text>
+<text x="702" y="81" fill="#c5cdd9" xml:space="preserve"><tspan font-weight="700">local</tspan> util = <tspan fill="#6cb6eb">require</tspan>(<tspan fill="#a0c980">"onemono.util"</tspan>)</text>
+<text x="690" y="107" text-anchor="end" fill="#797e87">2</text>
+<text x="702" y="107" fill="#c5cdd9" xml:space="preserve"></text>
+<text x="690" y="133" text-anchor="end" fill="#797e87">3</text>
+<rect x="727" y="120" width="40" height="18" rx="3" fill="#6cb6eb"/>
+<text x="702" y="133" fill="#c5cdd9" xml:space="preserve"><tspan font-style="italic">-- </tspan><tspan fill="#2c2e34" font-weight="700">TODO</tspan><tspan font-style="italic"> cache blended results</tspan></text>
+<text x="690" y="159" text-anchor="end" fill="#797e87">4</text>
+<text x="702" y="159" fill="#c5cdd9" xml:space="preserve"><tspan font-style="italic">--- Mix two colors, alpha in [0, 1].</tspan></text>
+<rect x="658" y="170" width="38" height="22" fill="#35414e"/>
+<text x="690" y="185" text-anchor="end" fill="#6cb6eb" font-weight="700">5</text>
+<text x="702" y="185" fill="#c5cdd9" xml:space="preserve"><tspan font-weight="700">function</tspan> M.<tspan fill="#6cb6eb">blend</tspan>(fg, bg, alpha)</text>
+<rect x="658" y="196" width="38" height="22" fill="#3c443f"/>
+<text x="690" y="211" text-anchor="end" fill="#a0c980" font-weight="700">6</text>
+<text x="702" y="211" fill="#c5cdd9" xml:space="preserve">  <tspan font-weight="700">local</tspan> r = fg.r * alpha + bg.r * (1 - alpha)</text>
+<rect x="658" y="222" width="38" height="22" fill="#3c443f"/>
+<text x="690" y="237" text-anchor="end" fill="#a0c980" font-weight="700">7</text>
+<text x="702" y="237" fill="#c5cdd9" xml:space="preserve">  <tspan font-weight="700">local</tspan> hex = util.<tspan fill="#6cb6eb">format</tspan>(<tspan fill="#a0c980">"#%02x"</tspan>, r)</text>
+<rect x="651" y="246" width="608" height="26" fill="#34363f"/>
+<text x="690" y="263" text-anchor="end" fill="#c5cdd9" font-weight="700">8</text>
+<text x="702" y="263" fill="#c5cdd9" xml:space="preserve">  <tspan font-weight="700">return</tspan> M.h</text>
+<text x="690" y="289" text-anchor="end" fill="#797e87">9</text>
+<text x="702" y="289" fill="#c5cdd9" xml:space="preserve"><tspan font-weight="700">end</tspan></text>
+<rect x="658" y="300" width="38" height="22" fill="#483b41"/>
+<text x="690" y="315" text-anchor="end" fill="#f5898e" font-weight="700">10</text>
+<text x="702" y="315" fill="#c5cdd9" xml:space="preserve"></text>
+<text x="690" y="341" text-anchor="end" fill="#797e87">11</text>
+<text x="702" y="341" fill="#c5cdd9" xml:space="preserve"><tspan font-weight="700">return</tspan> M</text>
+<rect x="828" y="249" width="225" height="20" rx="4" fill="#40373d"/>
+<text x="836" y="263" fill="#f5898e" xml:space="preserve">■ undefined field `h`</text>
+<path d="M783 269 q2 -3 4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0" fill="none" stroke="#f5898e" stroke-width="1.3"/>
+<rect x="801" y="274" width="250" height="156" rx="8" fill="#2c2e34" stroke="#494d5b"/>
+<rect x="802" y="280" width="248" height="24" fill="#373a43"/>
+<rect x="811" y="284" width="16" height="16" rx="4" fill="#394959"/>
+<text x="819" y="296" fill="#6cb6eb" font-size="11" font-weight="700" text-anchor="middle">ƒ</text>
+<text x="837" y="297" fill="#c5cdd9" font-weight="700"><tspan fill="#6cb6eb" font-weight="700">h</tspan>ex</text>
+<text x="1039" y="297" fill="#6cb6eb" text-anchor="end" font-size="13">Function</text>
+<rect x="811" y="308" width="16" height="16" rx="4" fill="#364a50"/>
+<text x="819" y="320" fill="#5dbbc1" font-size="11" font-weight="700" text-anchor="middle">◆</text>
+<text x="837" y="321" fill="#c5cdd9"><tspan fill="#6cb6eb" font-weight="700">h</tspan>ighlights</text>
+<text x="1039" y="321" fill="#5dbbc1" text-anchor="end" font-size="13">Field</text>
+<rect x="811" y="332" width="16" height="16" rx="4" fill="#4b4e55"/>
+<text x="819" y="344" fill="#c5cdd9" font-size="11" font-weight="700" text-anchor="middle">x</text>
+<text x="837" y="345" fill="#c5cdd9"><tspan fill="#6cb6eb" font-weight="700">h</tspan>ue</text>
+<text x="1039" y="345" fill="#c5cdd9" text-anchor="end" font-size="13">Variable</text>
+<rect x="811" y="356" width="16" height="16" rx="4" fill="#504a41"/>
+<text x="819" y="368" fill="#deb974" font-size="11" font-weight="700" text-anchor="middle">C</text>
+<text x="837" y="369" fill="#c5cdd9"><tspan fill="#6cb6eb" font-weight="700">h</tspan>sl</text>
+<text x="1039" y="369" fill="#deb974" text-anchor="end" font-size="13">Class</text>
+<rect x="811" y="380" width="16" height="16" rx="4" fill="#414659"/>
+<text x="819" y="392" fill="#96a8ee" font-size="11" font-weight="700" text-anchor="middle">M</text>
+<text x="837" y="393" fill="#c5cdd9"><tspan fill="#6cb6eb" font-weight="700">h</tspan>ttp</text>
+<text x="1039" y="393" fill="#96a8ee" text-anchor="end" font-size="13">Module</text>
+<rect x="811" y="404" width="16" height="16" rx="4" fill="#434d43"/>
+<text x="819" y="416" fill="#a0c980" font-size="11" font-weight="700" text-anchor="middle">S</text>
+<text x="837" y="417" fill="#c5cdd9"><tspan fill="#6cb6eb" font-weight="700">h</tspan>ash</text>
+<text x="1039" y="417" fill="#a0c980" text-anchor="end" font-size="13">Snippet</text>
+<rect x="651" y="446" width="608" height="34" fill="#373a43"/>
+<rect x="651" y="446" width="70" height="34" fill="#6cb6eb"/>
+<text x="670" y="468" fill="#2c2e34" font-weight="700">NOR</text>
+<text x="736" y="468" fill="#6cb6eb">[onemono]  <tspan fill="#f5898e">E:1</tspan> <tspan fill="#deb974">W:2</tspan></text>
+<text x="1244" y="468" fill="#c5cdd9" text-anchor="end"><tspan fill="#a0c980"> main</tspan>  <tspan fill="#6cb6eb">●</tspan> lua  8:14</text>
+</g>
+<rect x="650" y="20" width="610" height="460" rx="14" fill="none" stroke="#494d5b"/>
+</svg>
