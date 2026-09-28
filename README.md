@@ -85,7 +85,7 @@ backgrounds and hues, and cuts the syntax down to what earns a color:
 | [mini.icons](https://github.com/echasnovski/mini.icons) | real icon colors |
 | [mini.pick](https://github.com/echasnovski/mini.pick) / [mini.extra](https://github.com/echasnovski/mini.extra) | |
 | [mini.files](https://github.com/echasnovski/mini.files) | |
-| [mini.tabline](https://github.com/echasnovski/mini.tabline) | modified buffers in the git "change" blue |
+| [mini.tabline](https://github.com/echasnovski/mini.tabline) | accent underline on the current buffer, modified buffers in the git "change" blue |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | signs, `numhl`, `linehl`, inline, preview, staged, blame |
 | [dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim) | kind icons colored like the completion menu |
 | [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim) | |
