@@ -73,6 +73,20 @@ for _, v in ipairs({ "light", "dark" }) do
   check(c.comment ~= c.fg and require("onemono.util").contrast(c.comment, c.bg) >= 4.5, v .. ": comment dimmer than fg, still AA")
 end
 
+-- ANSI: TUIs draw borders/text in white and put black text on colored
+-- highlights (lazysql, htop), so both must stay readable in both variants
+for _, v in ipairs({ "light", "dark" }) do
+  local c = ex.colors(v)
+  local a = require("onemono.terminal").ansi(c)
+  local contrast = require("onemono.util").contrast
+  for _, i in ipairs({ 7, 15 }) do
+    check(contrast(a[i], c.bg) >= 4.5, ("%s: ansi %d readable on bg"):format(v, i))
+  end
+  for i = 1, 6 do
+    check(contrast(a[0], a[i]) >= 4.5, ("%s: ansi 0 readable on ansi %d"):format(v, i))
+  end
+end
+
 -- mono = true: pure monochrome
 ex.setup({ mono = true })
 vim.cmd.colorscheme("onemono-dark")

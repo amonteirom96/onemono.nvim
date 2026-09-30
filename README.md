@@ -299,6 +299,11 @@ Lazygit's diff colors come from your terminal's ANSI palette, so they follow the
 Ghostty or Kitty theme automatically. ANSI magenta (5 and 13) is azure, since
 the palette has no purple.
 
+Both variants give ANSI colors the same roles: black (0) is a shade of the
+background and white (7, 15) is the text color. TUIs made for dark terminals
+(lazysql, htop and other tview/tcell apps) draw borders in white and put black
+text on colored highlights, so they stay readable in the light theme too.
+
 ## Commands
 
 | Command | Description |
