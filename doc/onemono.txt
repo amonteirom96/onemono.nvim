@@ -78,9 +78,9 @@ Defaults:
 on_colors(colors, variant)
     Change the palette before highlights are built. Keys: `bg`, `fg`, `red`,
     `orange`, `yellow`, `green`, `cyan`, `azure`, `blue`, `accent`,
-    `surface1`, `surface2`, `surface3`, `border`, `muted`, `comment`, `bg_dim`,
-    `bg_float`, `code.{string,func,type,constant}`, `git.{add,change,delete}`,
-    `diag.{error,warn,info,hint,ok}`.
+    `surface1`, `surface2`, `surface3`, `select`, `border`, `muted`, `comment`,
+    `bg_dim`, `bg_float`, `code.{string,func,type,constant}`,
+    `git.{add,change,delete}`, `diag.{error,warn,info,hint,ok}`.
 
                                                                *onemono-mono*
 mono

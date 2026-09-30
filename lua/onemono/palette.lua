@@ -56,6 +56,7 @@ M.base = {
 ---@field surface1 string    cursorline, subtle rows
 ---@field surface2 string    selection, active tab, statusline
 ---@field surface3 string    stronger selection / match paren
+---@field select string      current item in lists: popup menu, pickers, file explorers
 ---@field border string
 ---@field muted string       UI chrome only (line numbers, whitespace) — never code
 ---@field comment string     comments: fg faded toward bg, still WCAG AA
@@ -84,6 +85,9 @@ function M.get(variant, opts)
   c.surface1 = blend(tint, c.bg, is_light and 0.05 or 0.06)
   c.surface2 = blend(tint, c.bg, is_light and 0.08 or 0.085)
   c.surface3 = blend(tint, c.bg, is_light and 0.14 or 0.13)
+  -- Current item in every list (Pmenu, pickers, explorers). surface2 is too
+  -- faint on the light paper, so light steps up to surface3.
+  c.select = is_light and c.surface3 or c.surface2
   c.border = blend(tint, c.bg, is_light and 0.24 or 0.22)
   c.muted = blend(c.fg, c.bg, is_light and 0.64 or 0.50)
   -- Comments step back from the code without dropping below AA (4.5:1): fg

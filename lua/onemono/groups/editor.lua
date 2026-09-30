@@ -6,8 +6,6 @@ return function(c, o)
   local blend = util.blend
   local bg = o.transparent and c.none or c.bg
   local float_bg = o.transparent and c.none or (o.float.solid and c.surface1 or c.bg_float)
-  -- Popup selection: surface2 is too faint on the light paper, so step up.
-  local pmenu_sel = c.variant == "light" and c.surface3 or c.surface2
   local float_border = o.float.solid and { fg = c.surface1, bg = float_bg } or { fg = c.border, bg = float_bg }
 
   local hl = {
@@ -56,7 +54,7 @@ return function(c, o)
     SignColumn = { fg = c.muted, bg = bg },
     FoldColumn = { fg = c.muted, bg = bg },
     Folded = { fg = c.fg, bg = c.surface1, italic = true },
-    QuickFixLine = { bg = c.surface2, bold = true },
+    QuickFixLine = { bg = c.select, bold = true },
 
     -- Selection & search (color here helps you find things) ------------------
     Visual = { bg = c.surface3 },
@@ -79,17 +77,17 @@ return function(c, o)
     TabLineSel = { fg = c.fg, bg = c.surface2, bold = true, sp = c.accent, underline = true },
     WinBar = { fg = c.fg, bg = bg },
     WinBarNC = { fg = c.muted, bg = bg },
-    WildMenu = { fg = c.fg, bg = c.surface3, bold = true },
+    WildMenu = { fg = c.fg, bg = c.select, bold = true },
 
     -- Popup menu -------------------------------------------------------------
     Pmenu = { fg = c.fg, bg = float_bg },
-    PmenuSel = { bg = pmenu_sel, bold = true },
+    PmenuSel = { bg = c.select, bold = true },
     PmenuKind = { fg = c.muted, bg = float_bg },
-    PmenuKindSel = { fg = c.fg, bg = pmenu_sel },
+    PmenuKindSel = { fg = c.fg, bg = c.select },
     PmenuExtra = { fg = c.muted, bg = float_bg },
-    PmenuExtraSel = { fg = c.muted, bg = pmenu_sel },
+    PmenuExtraSel = { fg = c.muted, bg = c.select },
     PmenuMatch = { fg = c.accent, bold = true },
-    PmenuMatchSel = { fg = c.accent, bg = pmenu_sel, bold = true },
+    PmenuMatchSel = { fg = c.accent, bg = c.select, bold = true },
     PmenuSbar = { bg = float_bg },
     PmenuThumb = { bg = c.surface3 },
     PmenuBorder = float_border,
