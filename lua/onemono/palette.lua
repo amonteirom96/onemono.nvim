@@ -86,8 +86,9 @@ function M.get(variant, opts)
   c.surface2 = blend(tint, c.bg, is_light and 0.08 or 0.085)
   c.surface3 = blend(tint, c.bg, is_light and 0.14 or 0.13)
   -- Current item in every list (Pmenu, pickers, explorers). surface2 is too
-  -- faint on the light paper, so light steps up to surface3.
-  c.select = is_light and c.surface3 or c.surface2
+  -- faint to spot at a glance, so both variants use surface3 (about the same
+  -- perceived lightness step from bg in light and dark).
+  c.select = c.surface3
   c.border = blend(tint, c.bg, is_light and 0.24 or 0.22)
   c.muted = blend(c.fg, c.bg, is_light and 0.64 or 0.50)
   -- Comments step back from the code without dropping below AA (4.5:1): fg
