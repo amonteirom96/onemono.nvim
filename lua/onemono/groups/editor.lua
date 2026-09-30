@@ -6,6 +6,8 @@ return function(c, o)
   local blend = util.blend
   local bg = o.transparent and c.none or c.bg
   local float_bg = o.transparent and c.none or (o.float.solid and c.surface1 or c.bg_float)
+  -- Popup selection: surface2 is too faint on the light paper, so step up.
+  local pmenu_sel = c.variant == "light" and c.surface3 or c.surface2
   local float_border = o.float.solid and { fg = c.surface1, bg = float_bg } or { fg = c.border, bg = float_bg }
 
   local hl = {
@@ -81,13 +83,13 @@ return function(c, o)
 
     -- Popup menu -------------------------------------------------------------
     Pmenu = { fg = c.fg, bg = float_bg },
-    PmenuSel = { bg = c.surface2, bold = true },
+    PmenuSel = { bg = pmenu_sel, bold = true },
     PmenuKind = { fg = c.muted, bg = float_bg },
-    PmenuKindSel = { fg = c.fg, bg = c.surface2 },
+    PmenuKindSel = { fg = c.fg, bg = pmenu_sel },
     PmenuExtra = { fg = c.muted, bg = float_bg },
-    PmenuExtraSel = { fg = c.muted, bg = c.surface2 },
+    PmenuExtraSel = { fg = c.muted, bg = pmenu_sel },
     PmenuMatch = { fg = c.accent, bold = true },
-    PmenuMatchSel = { fg = c.accent, bg = c.surface2, bold = true },
+    PmenuMatchSel = { fg = c.accent, bg = pmenu_sel, bold = true },
     PmenuSbar = { bg = float_bg },
     PmenuThumb = { bg = c.surface3 },
     PmenuBorder = float_border,

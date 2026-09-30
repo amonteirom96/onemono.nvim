@@ -2,7 +2,7 @@
 local M = {}
 
 --- Bump to invalidate every user's compiled cache after changing highlights.
-M.version = "1.3.1"
+M.version = "1.3.2"
 
 local cache_dir = vim.fn.stdpath("cache") .. "/onemono"
 local configured = false
